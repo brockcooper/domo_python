@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: domo-python
+Version: 0.0.1
+Summary: Domo API functions to import and export data into usable Pandas dataframes and manage your Domo instancea
+Home-page: https://github.com/brockcooper/domo_python
+Author: Big Squid, Inc.
+Author-email: bcooper@bigsquid.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
