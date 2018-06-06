@@ -2,6 +2,25 @@
 
 This is a series of important Python functions that will allow you to easy work with the Domo API, including exporting and importing data.
 
+## Installing domo_python
+
+### pip install
+
+Run this command in your Terminal
+
+```
+pip install domo_python
+```
+
+### Import
+
+Add this line of Python to the top of any Python script you are using with an integration to Domo
+
+```
+import domo_python
+```
+
+
 ## Examples of Functions Available
 
 ### Creating an Access Token
