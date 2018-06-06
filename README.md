@@ -61,7 +61,7 @@ domo_python.dataframe_to_domo_dataset ( df, timeseriesForecastDatasetID, client_
 
 This repo also contains an example Jupyter Notebook with pre-written examples in the *domo-python-examples.ipynb* file. To access this, you will need to install Jupyter Notebooks, I recommend doing this through [Anaconda](https://www.anaconda.com/download/#macos).
 
-After you've installed Jupyter Notebooks, you will navigate in your Terminal to the folder where you downloaded this repo and runn the following command:
+After you've installed Jupyter Notebooks, you will navigate in your Terminal to the folder where you downloaded this repo and run the following command:
 
 ```
 jupyter notebooks
