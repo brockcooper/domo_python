@@ -19,7 +19,7 @@ def import_data_to_domo ( dataset_id, csv, access_token  ) :
                    'Authorization' : 'bearer ' + access_token}
     return requests.put('https://api.domo.com/v1/datasets/' + dataset_id + '/data?updateMethod=REPLACE', data = csv, headers = http_headers).text
 
-def domo_cav_to_dataframe ( domo_dataset_id, domo_client_id, domo_client_secret ) :
+def domo_csv_to_dataframe ( domo_dataset_id, domo_client_id, domo_client_secret ) :
     # Import CSV and turn into Pandas Dataframe
     return pd.read_csv(StringIO(export_domo_dataset(domo_dataset_id, get_access_token( domo_client_id, domo_client_secret ))))
 

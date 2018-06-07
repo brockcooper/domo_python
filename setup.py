@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="domo_python",
-    version="0.0.5",
+    version="0.0.6",
     author="Big Squid, Inc.",
     author_email="bcooper@bigsquid.com",
     description="Domo API functions to import and export data into usable Pandas dataframes and manage your Domo instancea",

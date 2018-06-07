@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: domo-python
-Version: 0.0.5
+Version: 0.0.6
 Summary: Domo API functions to import and export data into usable Pandas dataframes and manage your Domo instancea
 Home-page: https://github.com/brockcooper/domo_python
 Author: Big Squid, Inc.
@@ -9,6 +9,25 @@ License: UNKNOWN
 Description: # domo_python
         
         This is a series of important Python functions that will allow you to easy work with the Domo API, including exporting and importing data.
+        
+        ## Installing domo_python
+        
+        ### pip install
+        
+        Run this command in your Terminal
+        
+        ```
+        pip install domo_python
+        ```
+        
+        ### Import
+        
+        Add this line of Python to the top of any Python script you are using with an integration to Domo
+        
+        ```
+        import domo_python
+        ```
+        
         
         ## Examples of Functions Available
         
@@ -53,7 +72,7 @@ Description: # domo_python
         The following shows how to get your Domo dataset into a Pandas dataframe, which you can then use for any further analysis or ETL work.
         
         ```python
-        df = domo_python.domo_cav_to_dataframe ( historicalDatasetId, client_id, client_secret )
+        df = domo_python.domo_csv_to_dataframe ( historicalDatasetId, client_id, client_secret )
         df.head()
         ```
         
