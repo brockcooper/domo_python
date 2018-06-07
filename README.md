@@ -64,7 +64,7 @@ domo_python.create_new_domo_dataset ( token, dataset_schema)
 The following shows how to get your Domo dataset into a Pandas dataframe, which you can then use for any further analysis or ETL work.
 
 ```python
-df = domo_python.domo_cav_to_dataframe ( historicalDatasetId, client_id, client_secret )
+df = domo_python.domo_csv_to_dataframe ( historicalDatasetId, client_id, client_secret )
 df.head()
 ```
 
