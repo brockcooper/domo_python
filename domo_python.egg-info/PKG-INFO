@@ -1,6 +1,6 @@
-Metadata-Version: 2.1
+Metadata-Version: 1.0
 Name: domo-python
-Version: 0.0.6
+Version: 0.0.8
 Summary: Domo API functions to import and export data into usable Pandas dataframes and manage your Domo instancea
 Home-page: https://github.com/brockcooper/domo_python
 Author: Big Squid, Inc.
@@ -84,6 +84,25 @@ Description: # domo_python
         domo_python.dataframe_to_domo_dataset ( df, timeseriesForecastDatasetID, client_id, client_secret  )
         ```
         
+        ### Exporting Data from Domo onto an SFTP Server
+        
+        The following shows how to get your Domo dataset onto an SFTP server.
+        
+        This function has two requirements:
+        
+        1) There needs to be a folder called 'incoming' in the root directory of the SFTP site
+        2) In the 'incoming' directory, there needs to be a folder called 'archive'. This function will move prior uploads into an archive folder.
+        
+        ```python
+        filename = 'fake_file_name'
+        host = 'sftp.example.com'
+        username = 'fake_user_name'
+        password = 'fake_password'
+        port = 253 # defaults to 22 if not included
+        
+        domo_python.domo_to_sftp(filename, host,username,password,port)
+        ```
+        
         ### Jupyter Notebooks Example
         
         This repo also contains an example Jupyter Notebook with pre-written examples in the *domo-python-examples.ipynb* file. To access this, you will need to install Jupyter Notebooks, I recommend doing this through [Anaconda](https://www.anaconda.com/download/#macos).
@@ -94,4 +113,3 @@ Description: # domo_python
         jupyter notebooks
         ```
 Platform: UNKNOWN
-Description-Content-Type: text/markdown

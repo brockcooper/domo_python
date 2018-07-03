@@ -3,6 +3,8 @@ import requests
 from requests.auth import HTTPBasicAuth
 from datetime import date, timedelta
 import json
+import time
+import pysftp
 from io import StringIO
 
 def get_access_token( client_id, client_secret ) :
@@ -35,6 +37,45 @@ def create_new_domo_dataset ( access_token, dataset_schema, dataset='') :
         j = json.loads(response.content.decode("utf-8"))
         print("Your new dataset id is: ", j["id"])
         return j["id"]
+
+def domo_to_sftp(filename, host,username,password,port=22):
+
+    df = domo_python.domo_csv_to_dataframe ( dataset_id, client_id, client_secret )
+
+    # Download to local file path
+    df.to_csv('{filename}.csv'.format(filename=filename),header=True,index=False)
+
+    ts = time.time()
+    st = datetime.datetime.fromtimestamp(ts).strftime('%Y.%m.%d')
+
+    cnopts = pysftp.CnOpts()
+    cnopts.hostkeys = None
+
+    with pysftp.Connection(host=host, username=username, password=password, port=port, cnopts=cnopts) as sftp:
+        with sftp.cd('incoming'):
+            rename_file_name = 'archive/{filename}{datestamp}.csv'.format(filename=filename, datestamp=st)
+            try:
+
+                # Delete current archive file if it exists
+                try:
+                    sftp.remove(rename_file_name)
+                    print('removed todays archive')
+                except:
+                    print('old file does not exist')
+
+                # put last file upload into archive
+                sftp.rename('{filename}.csv'.format(filename=filename), rename_file_name)
+                print('renamed yesterday upload')
+            except:
+                print('no file to rename')
+                pass
+            finally:
+
+                # upload file and remove the csv from local file path
+                sftp.put('{filename}.csv'.format(filename=filename))
+                os.remove('{filename}.csv'.format(filename=filename))
+                print('Successful put')
+
 
     # Example of a Domo dataset schema needed for the API
     # dataset_schema = """{

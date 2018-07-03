@@ -76,6 +76,25 @@ The following shows how to import data from a dataframe into Domo. You will need
 domo_python.dataframe_to_domo_dataset ( df, timeseriesForecastDatasetID, client_id, client_secret  )
 ```
 
+### Exporting Data from Domo onto an SFTP Server
+
+The following shows how to get your Domo dataset onto an SFTP server.
+
+This function has two requirements:
+
+1) There needs to be a folder called 'incoming' in the root directory of the SFTP site
+2) In the 'incoming' directory, there needs to be a folder called 'archive'. This function will move prior uploads into an archive folder.
+
+```python
+filename = 'fake_file_name'
+host = 'sftp.example.com'
+username = 'fake_user_name'
+password = 'fake_password'
+port = 253 # defaults to 22 if not included
+
+domo_python.domo_to_sftp(filename, host,username,password,port)
+```
+
 ### Jupyter Notebooks Example
 
 This repo also contains an example Jupyter Notebook with pre-written examples in the *domo-python-examples.ipynb* file. To access this, you will need to install Jupyter Notebooks, I recommend doing this through [Anaconda](https://www.anaconda.com/download/#macos).
