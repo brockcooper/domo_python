@@ -40,7 +40,7 @@ def create_new_domo_dataset ( access_token, dataset_schema, dataset='') :
 
 def domo_to_sftp(filename, host,username,password,port=22):
 
-    df = domo_python.domo_csv_to_dataframe ( dataset_id, client_id, client_secret )
+    df = domo_csv_to_dataframe ( dataset_id, client_id, client_secret )
 
     # Download to local file path
     df.to_csv('{filename}.csv'.format(filename=filename),header=True,index=False)
