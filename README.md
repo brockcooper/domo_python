@@ -91,8 +91,9 @@ host = 'sftp.example.com'
 username = 'fake_user_name'
 password = 'fake_password'
 port = 253 # defaults to 22 if not included
+df = domo_python.domo_csv_to_dataframe ( historicalDatasetId, client_id, client_secret )
 
-domo_python.domo_to_sftp(filename, host,username,password,port)
+domo_python.domo_to_sftp(filename, df, host, username, password, port)
 ```
 
 ### Jupyter Notebooks Example

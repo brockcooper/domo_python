@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: domo-python
-Version: 0.0.9
+Version: 0.0.10
 Summary: Domo API functions to import and export data into usable Pandas dataframes and manage your Domo instancea
 Home-page: https://github.com/brockcooper/domo_python
 Author: Big Squid, Inc.
@@ -99,8 +99,9 @@ Description: # domo_python
         username = 'fake_user_name'
         password = 'fake_password'
         port = 253 # defaults to 22 if not included
+        df = domo_python.domo_csv_to_dataframe ( historicalDatasetId, client_id, client_secret )
         
-        domo_python.domo_to_sftp(filename, host,username,password,port)
+        domo_python.domo_to_sftp(filename, df, host, username, password, port)
         ```
         
         ### Jupyter Notebooks Example
