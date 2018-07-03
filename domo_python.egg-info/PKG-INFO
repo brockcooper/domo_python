@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: domo-python
-Version: 0.0.10
+Version: 0.0.13
 Summary: Domo API functions to import and export data into usable Pandas dataframes and manage your Domo instancea
 Home-page: https://github.com/brockcooper/domo_python
 Author: Big Squid, Inc.
